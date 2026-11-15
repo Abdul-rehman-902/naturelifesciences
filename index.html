@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Life Sciences</title>
+    <link rel="icon" href="favicon.png">
+</head>
+<style>
+    *,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+.nav-bar {
+    background-color: white;
+}
+
+.nav-1 {
+    background-color: #273272;
+    height: 50px;
+    padding-top: 1px;
+    padding-left: 55px;
+    border-radius: 200px;
+}
+
+.nav-1 p {
+    color: white;
+
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 0 32px;
+    padding-bottom: 12px;
+}
+
+.brand {
+    flex: none;
+    height: 84px;
+    cursor: pointer;
+}
+
+.track {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.belt {
+    display: flex;
+    width: max-content;
+    animation: belt-slide 40s linear infinite;
+}
+
+.group {
+    display: flex;
+    flex: none;
+}
+
+.group img {
+    height: 36px;
+    margin-right: 48px;
+    flex: none;
+    cursor: pointer;
+}
+
+@keyframes belt-slide {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.ceo {
+    display: flex;
+    background: #F5F7FB;
+}
+
+.ceo img {
+    height: 350px;
+    padding-top: 35px;
+    padding-left: 32px;
+    cursor: pointer;
+}
+
+.ceo-content h1 {
+    text-align: center;
+}
+
+.ceo-content p {
+    text-align: center;
+    font-size: 25px;
+}
+
+.slider {
+    height: 88vh;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #cfd6dc;
+    margin: 18px;
+}
+
+.slides {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    animation: slider-slide 16s ease-in-out infinite;
+}
+
+.slides img {
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    flex: none;
+    cursor: pointer;
+}
+
+@keyframes slider-slide {
+
+    0%,
+    20% {
+        transform: translateX(0);
+    }
+
+    25%,
+    45% {
+        transform: translateX(-25%);
+    }
+
+    50%,
+    70% {
+        transform: translateX(-50%);
+    }
+
+    75%,
+    95% {
+        transform: translateX(-75%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .belt,
+    .slides {
+        animation: none;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE RULES  (laptop design above stays as it is)
+   ===================================================== */
+
+/* ---------- Small laptop / tablet landscape (up to 1024px) ---------- */
+@media (max-width: 1024px) {
+    .nav-1 {
+        padding-left: 32px;
+    }
+
+    .nav-1 p {
+        font-size: 15px;
+    }
+
+    .bar {
+        gap: 24px;
+        padding: 0 24px 12px;
+    }
+
+    .brand {
+        height: 72px;
+    }
+
+    .ceo img {
+        height: 300px;
+        padding-left: 24px;
+    }
+
+    .ceo-content {
+        padding: 0 16px;
+    }
+
+    .ceo-content p {
+        font-size: 20px;
+    }
+
+    .slider {
+        height: 70vh;
+    }
+}
+
+/* ---------- Tablet portrait (up to 768px) ---------- */
+@media (max-width: 768px) {
+    .nav-1 {
+        height: auto;
+        padding: 6px 24px;
+        border-radius: 28px;
+        text-align: center;
+    }
+
+    .nav-1 p {
+        margin: 6px 0;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .bar {
+        gap: 16px;
+        padding: 8px 16px 12px;
+    }
+
+    .brand {
+        height: 56px;
+    }
+
+    .group img {
+        height: 30px;
+        margin-right: 36px;
+    }
+
+    /* CEO: photo on top, text below */
+    .ceo {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    .ceo img {
+        height: auto;
+        width: 100%;
+        max-width: 300px;
+        padding: 24px 16px 0;
+    }
+
+    .ceo-content {
+        padding: 0 20px;
+    }
+
+    .ceo-content h1 {
+        font-size: 26px;
+    }
+
+    .ceo-content p {
+        font-size: 18px;
+    }
+
+    .slider {
+        height: 50vh;
+        min-height: 240px;
+        margin: 14px;
+    }
+}
+
+/* ---------- Mobile (up to 480px) ---------- */
+@media (max-width: 480px) {
+    .nav-1 {
+        padding: 6px 14px;
+        border-radius: 20px;
+    }
+
+    .nav-1 p {
+        font-size: 12px;
+    }
+
+    /* Hide the long "&emsp;|&emsp;" gaps feeling: let text wrap nicely */
+    .bar {
+        gap: 10px;
+        padding: 8px 10px 10px;
+    }
+
+    .brand {
+        height: 44px;
+    }
+
+    .group img {
+        height: 24px;
+        margin-right: 24px;
+    }
+
+    .ceo img {
+        max-width: 220px;
+        padding-top: 18px;
+    }
+
+    .ceo-content {
+        padding: 0 14px;
+    }
+
+    .ceo-content h1 {
+        font-size: 22px;
+    }
+
+    .ceo-content p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .slider {
+        height: 36vh;
+        min-height: 200px;
+        margin: 10px;
+        border-radius: 12px;
+    }
+}
+
+.dwai {
+    height: 35pc;
+    background: #F4F6F9;
+}
+
+.wheat {
+    text-align: center;
+    padding-top: 1px;
+}
+
+.wheat h1 {
+    font-size: 45px;
+    padding-left: 15px;
+    border: 1px solid;
+    padding-bottom: 6px;
+    padding-right: 12px;
+    background: #2A7D2E;
+    color: white;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.wheat-medicines img {
+    height: 20pc;
+    padding-left: 23px;
+    padding-right: 23px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f4f7f4;
+}
+
+.tabs-wrap {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+/* ---------- Tab bar (ek hi line mein) ---------- */
+.product-tabs {
+    display: flex;
+    height: 78px;
+    background: #2a7f32;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.product-tabs button {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.product-tabs button:hover {
+    background: #23702b;
+}
+
+.product-tabs button.active {
+    background: #124a30;
+}
+
+/* ---------- Content ---------- */
+.tab-content {
+    display: none;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h2 {
+    color: #124a30;
+    margin-top: 0;
+}
+
+/* ---------- Do tasveeren ek line mein ---------- */
+.image-row {
+    display: flex;
+    flex-wrap: nowrap;
+    /* kabhi neeche nahi jayengi */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.image-row img {
+    flex: 1;
+    min-width: 0;
+    /* taake chhoti screen par bhi barabar fit hon */
+    width: 50%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 700px) {
+    .product-tabs {
+        height: 56px;
+        border-radius: 28px;
+    }
+
+    .product-tabs button {
+        font-size: 10px;
+        padding: 0 2px;
+    }
+
+    .image-row {
+        gap: 10px;
+    }
+
+    .image-row img {
+        height: 160px;
+        border-radius: 10px;
+    }
+}
+</style>
+<body>
+    <div class="web-page">
+        <header>
+            <div class="nav-bar">
+                <div class="nav-1">
+                    <p>
+                        Phone: +92 329 6236533 &emsp;|&emsp; Email: naturelifepk@gmail.com &emsp;|&emsp; CEO
+                        number: +92 300 4922864</p>
+                </div>
+                <div class="bar">
+                    <img class="brand" src="logo.png" alt="Nature Life Sciences">
+
+                    <div class="track">
+                        <div class="belt">
+                            <div class="group">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                            </div>
+                            <div class="group" aria-hidden="true">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                                <img src="logo.png" alt="logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="ceo">
+            <img src="ceo photo.jpg" alt="CEO Asif Iqbal">
+            <div class="ceo-content">
+                <h1>Vision of the CEO</h1>
+                <p>
+                    “To innovate with purpose, lead with integrity, and empower growth that creates lasting value
+                    for our clients, our people, and the communities we serve.”
+                    <br>
+                    <br>
+                    At the core of our organization is a commitment to excellence driven by the strategic vision of
+                    our CEO, Asif Iqbal. Believing that true leadership lies in the balance between
+                    forward-thinking innovation and sustainable development, Asif Iqbal guides the company toward a
+                    future where technology, human capability, and ethics meet.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <main>
+            <div class="slider">
+                <div class="slides">
+                    <img src="wheat.jpg" alt="Wheat">
+                    <img src="cotton.jpg" alt="Cotton">
+                    <img src="rice.jpg" alt="Rice">
+                    <img src="sugar cane.jpg" alt="Sugar cane">
+                </div>
+            </div>
+        </main>
+        <div class="dwai">
+            <div class="wheat">
+                <h1>Wheat crop protection</h1>
+            </div>
+            <div class="tabs-wrap">
+                <div class="product-tabs">
+                    <button class="active" data-tab="insecticides">Insecticides</button>
+                    <button data-tab="herbicides">Herbicides</button>
+                    <button data-tab="fungicides">Fungicides</button>
+                    <button data-tab="micronutrients">Micronutrients</button>
+                    <button data-tab="granules">Granules</button>
+                </div>
+
+                <div id="insecticides" class="tab-content active">
+                    <h2>Insecticides</h2>
+                    <p>Best insecticides for wheart crop</p>
+                    <div class="image-row">
+                        <img src="Ceedo.jpg" alt="Insecticide Ceedo">
+                        <img src="Ceedo.jpg" alt="">
+                    </div>
+                </div>
+
+                <div id="herbicides" class="tab-content">
+                    <h2>Herbicides</h2>
+                    <p>Best herbicides for wheat crop</p>
+                    <div class="image-row">
+                        <img src="azonner.jpg" alt="Herbicide azonner">
+                        <img src="Tri Ultra.jpg" alt="Herbicide Tri Ultra">
+                    </div>
+                </div>
+
+                <div id="fungicides" class="tab-content">
+                    <h2>Fungicides</h2>
+                    <p>Best fungicides for wheat crop</p>
+                    <div class="image-row">
+                        <img src="Nurcher.jpg" alt="Fungicide Nurcher">
+                        <img src="Nurcher.jpg" alt="Fungicide Nurcher">
+                    </div>
+                </div>
+
+                <div id="micronutrients" class="tab-content">
+                    <h2>Micronutrients</h2>
+                    <p>Best micronutrients for wheat</p>
+                    <div class="image-row">
+                        <img src="silter.jpg" alt="Micronutrient silter">
+                        <img src="Mextra.jpg" alt="Micronutrient Mextra">
+                    </div>
+                </div>
+
+                <div id="granules" class="tab-content">
+                    <h2>Granules</h2>
+                    <p>Best granules for wheat</p>
+                    <div class="image-row">
+                        <img src="Gister plus.jpg" alt="Granule Gister plus">
+                        <img src="Gister plus.jpg" alt="Granule Gister plus">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const buttons = document.querySelectorAll('.product-tabs button');
+    const panels = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.toggle('active', b === btn));
+            panels.forEach(p => p.classList.toggle('active', p.id === btn.dataset.tab));
+        });
+    });
+</script>
+
+</html>
